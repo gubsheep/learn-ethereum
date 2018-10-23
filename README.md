@@ -11,4 +11,4 @@ git submodule update
 ```
 
 ## Run the site
-Just run `hugo server` and visit `localhost:1313`.
+Run `hugo server` and visit `localhost:1313`.
