@@ -54,3 +54,8 @@ title = "Simplicity - Hugo theme"
   posts = "/:year/:month/:day/:slug/"
 [pygmentsOptions]
   linenos = false
+[params.sectionLabels]
+  Introduction = "0"
+  Accounts = "1"
+  Transactions = "2"
+  Meta = "M"

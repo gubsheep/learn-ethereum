@@ -5,8 +5,7 @@ categories: [writing]
 tags: [typography, elements]
 language: en
 slug: typography
-sectionNum: 1
-subsectionNum: 2
+weight: 1
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit :wink:. Nullam nibh lorem, porta ut urna ut, scelerisque consequat magna. Pellentesque vel massa sed tortor cursus tempus at eget ligula. Duis leo odio, luctus eget suscipit vel, pharetra id velit. Mauris arcu enim, mollis placerat porta in, sagittis a nisl. Nam et augue eu justo porta tincidunt. In luctus nisl dolor, sed aliquet augue elementum eget. Vivamus laoreet, mauris vitae aliquam faucibus, tellus dolor feugiat felis, ac facilisis diam eros eget est.

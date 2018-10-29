@@ -6,8 +6,7 @@ tags: ["images", "lightbox"]
 language: en
 slug: images
 images: [/images/image-1.jpg]
-sectionNum: 1
-subsectionNum: 1
+weight: 1
 ---
 
 Use markdown to display an image.
