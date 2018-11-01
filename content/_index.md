@@ -4,6 +4,6 @@ language: en
 slug: /
 ---
 
-# Simplicity, Hugo theme.
+# Learn Ethereum
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+A no-bullshit introduction to Ethereum.
