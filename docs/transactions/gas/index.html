@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaction fees and gas - Simplicity - Hugo theme</title>
+<meta name="author" content="Przemysław `eshlox` Kołodziejczyk">
+<meta name="description" content="A blog about everything.">
+
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+<link rel="stylesheet" href='/learn-ethereum/assets/css/main.39ec5efb65b7.css'>
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/learn-ethereum/assets/img/apple-touch-icon.png">
+<link rel="shortcut icon" href="/learn-ethereum/assets/img/favicon.ico">
+
+
+<link href="/learn-ethereum/posts/index.xml" rel="alternate" type="application/rss+xml" title="Simplicity - Hugo theme" />
+<link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
+
+<meta property="og:title" content="Transaction fees and gas" />
+<meta property="og:description" content="Transaction Fees and Gas As stated, the model we have described presents several problems:
+ Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources? Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://briangu33.github.io/learn-ethereum/transactions/gas/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
+
+
+
+<meta itemprop="name" content="Transaction fees and gas">
+<meta itemprop="description" content="Transaction Fees and Gas As stated, the model we have described presents several problems:
+ Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources? Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue.">
+
+
+<meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="wordCount" content="527">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Transaction fees and gas"/>
+<meta name="twitter:description" content="Transaction Fees and Gas As stated, the model we have described presents several problems:
+ Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources? Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue."/>
+
+
+  </head>
+  <body>
+    <nav>
+  <a href="/learn-ethereum/" title="Homepage">
+    Simplicity
+  </a>
+  
+    <a class="homePageIcon" href="/learn-ethereum/" title="Homepage">
+      <svg fill="#000000" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+  
+</nav>
+
+    <main>
+      
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <article>
+    <header>
+      <time datetime="2018-10-29 10:15">2018-10-29</time>
+      <h1>Transaction fees and gas</h1>
+    </header>
+    <section>
+
+<h1 id="transaction-fees-and-gas">Transaction Fees and Gas</h1>
+
+<p>As stated, the model we have described presents several problems:</p>
+
+<ol>
+<li>Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources?</li>
+<li>Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue. What prevents malicious actors from freezing the network by sending requests for arbitrarily complex transactions (or for “infinite loop” transactions which would never finish)?</li>
+</ol>
+
+<p>Ethereum solves these problems by introducing a market for computation. One of side of the market, there are people who wish to purchase computation time on the EVM—network participants who broadcast transaction requests, bidding ether for miners to execute their requests. On the other side are mining nodes, who execute transactions on the EVM, propagate state changes, and receive payment. Upon execution and finalization of a transaction, the requester pays the miner a <em>transaction fee</em> in Ether, the native currency of Ethereum.</p>
+
+<p>Of course, since transaction requests can be requests for the execution of arbitrarily complex code, the “bid” which a network participant submits alongside their transaction request actually has two parts:</p>
+
+<ul>
+<li>The amount of ether they are willing to pay per unit of computation.</li>
+<li>The maximum number of units of computation they are willing to pay for—if the transaction request ends up exceeding this ceiling, the entire transaction is cancelled and rolled back. It is a well-known result from computability theory that, for any given piece of code, it can be intractable or impossible to predict how long the code will run for, or if it will even terminate at all. Forcing everyone to specify a limit on computation they will pay for ensures that requesters can impose an upper bound on their transaction fees (imagine requesting an unpredictable transaction and later finding out that you were charged thousands of dollars for it because of side effects!)</li>
+</ul>
+
+<p>The Ethereum specification precisely specifies how EVM code maps to “units of computation.” A unit of computation is also called one unit of <em>gas</em>. Therefore, the amount of ether that you’re willing to pay per unit of gas is your transaction’s <em>gas price</em>, and the maximum number of units of computation you are willing to pay for is the transaction’s <em>gas limit</em>.</p>
+
+<p>As a network participant, you specify a gas limit and gas price with every transaction request. On the other side, every second, any given Ethereum miners receive dozens of transaction requests. Any given miner will keep unfulfilled transaction requests they’ve received in their own local transaction pool. In accordance with the incentive structure specified above, miners sort transactions in their transaction pool by gas price, and execute transactions with the highest gas price first. This means that requests with low gas price can take a long time to be executed, especially if the network is backed up with many requests. However, the market-like nature of the network means that the median gas price will rise and fall in accordance with demand.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="categories"></p>
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    <script src="/learn-ethereum/assets/js/main.82829af440c4.js"></script>
+    
+  </body>
+</html>

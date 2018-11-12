@@ -1,10 +1,11 @@
-baseURL = "https://example.org/"
+baseURL = "http://briangu33.github.io/learn-ethereum"
 defaultContentLanguage = "en"
 disqusShortname = "test"
 enableEmoji = true
 enableRobotsTXT = true
 googleAnalytics = ""
 languageCode = "en-us"
+publishDir = "docs"
 pygmentsCodeFences = true
 pygmentsStyle = "native"
 pygmentsUseClasses =  true

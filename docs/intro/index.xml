@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Simplicity - Hugo theme</title>
+    <link>http://briangu33.github.io/learn-ethereum/intro/</link>
+    <description>Recent content in Introduction on Simplicity - Hugo theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Oct 2018 10:15:01 +0200</lastBuildDate>
+    
+      <atom:link href="http://briangu33.github.io/learn-ethereum/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>[Meta] Read me first!</title>
+        <link>http://briangu33.github.io/learn-ethereum/intro/overview/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/intro/overview/</guid>
+        <description>Introduction This is a collection of tutorials and articles on blockchain, organized roughly by topic and focused primarily around Ethereum.
+Here is my thesis: the signal-to-noise ratio of a simple Google search for any given blockchain topic is extremely low, especially for a newcomer who doesn’t even know what to query to begin with. Prominent information online is poorly-written (Bitcoin Whitepaper) or sometimes just inaccurate (John McAfee’s tweets). This is my attempt to carve out a space of quality-assured resources for anyone looking for an entry point into blockchain.</description>
+      </item>
+    
+      <item>
+        <title>Ethereum 101</title>
+        <link>http://briangu33.github.io/learn-ethereum/intro/eth-101/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/intro/eth-101/</guid>
+        <description>Ethereum 101 This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!
+What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.</description>
+      </item>
+    
+  </channel>
+</rss>

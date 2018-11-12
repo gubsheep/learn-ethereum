@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transactions on Simplicity - Hugo theme</title>
+    <link>http://briangu33.github.io/learn-ethereum/transactions/</link>
+    <description>Recent content in Transactions on Simplicity - Hugo theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Oct 2018 10:15:01 +0200</lastBuildDate>
+    
+      <atom:link href="http://briangu33.github.io/learn-ethereum/transactions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>What is a transaction?</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/</guid>
+        <description>What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, most transactions look like the trivial financial transaction of transferring ether:
+ Look up the accounts with addresses A and B in EVM storage. Decrease the account balance of A by x ETH. Increase the account balance of B by x ETH.  However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction.</description>
+      </item>
+    
+      <item>
+        <title>Transaction fees and gas</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/gas/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/gas/</guid>
+        <description>Transaction Fees and Gas As stated, the model we have described presents several problems:
+ Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources? Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue.</description>
+      </item>
+    
+      <item>
+        <title>Transactions are committed to the network in batches, or “blocks”</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/blocks/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/blocks/</guid>
+        <description>Transactions are committed to the network in batches, or “blocks” Dozens of transaction requests are propagated around the Ethereum network per second. Simultaneously, miners verify, execute, and propagate state change associated with dozens of transactions per second. Because of latency and the nature of the network, it may be the case that two miners hear about, execute, and start propagating the result of two different local transactions before they hear about each others’.</description>
+      </item>
+    
+  </channel>
+</rss>
