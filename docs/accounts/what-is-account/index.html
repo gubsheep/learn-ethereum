@@ -22,8 +22,8 @@
 <link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
 
 <meta property="og:title" content="What is an account?" />
-<meta property="og:description" content="What is an account? In Ethereum, an account is an object which holds ether and possibly other metadata. It is slightly more general than the traditional concept of a financial “account” (i.e. an account on a bank or payment service). At a basic level, an account contains:
- An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier." />
+<meta property="og:description" content="What is an account? In Ethereum, an account is a construct which holds ether and possibly other metadata. At a basic level, an account is made of:
+ An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier. A balance: the amount of ether owned by this account. Ether is the cryptocurrency of the Ethereum network. Metadata: the number of transactions this account has participated in, and other associated data or code." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://briangu33.github.io/learn-ethereum/accounts/what-is-account/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
 <meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
@@ -31,13 +31,13 @@
 
 
 <meta itemprop="name" content="What is an account?">
-<meta itemprop="description" content="What is an account? In Ethereum, an account is an object which holds ether and possibly other metadata. It is slightly more general than the traditional concept of a financial “account” (i.e. an account on a bank or payment service). At a basic level, an account contains:
- An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier.">
+<meta itemprop="description" content="What is an account? In Ethereum, an account is a construct which holds ether and possibly other metadata. At a basic level, an account is made of:
+ An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier. A balance: the amount of ether owned by this account. Ether is the cryptocurrency of the Ethereum network. Metadata: the number of transactions this account has participated in, and other associated data or code.">
 
 
 <meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
-<meta itemprop="wordCount" content="382">
+<meta itemprop="wordCount" content="387">
 
 
 
@@ -45,8 +45,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What is an account?"/>
-<meta name="twitter:description" content="What is an account? In Ethereum, an account is an object which holds ether and possibly other metadata. It is slightly more general than the traditional concept of a financial “account” (i.e. an account on a bank or payment service). At a basic level, an account contains:
- An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier."/>
+<meta name="twitter:description" content="What is an account? In Ethereum, an account is a construct which holds ether and possibly other metadata. At a basic level, an account is made of:
+ An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier. A balance: the amount of ether owned by this account. Ether is the cryptocurrency of the Ethereum network. Metadata: the number of transactions this account has participated in, and other associated data or code."/>
 
 
   </head>
@@ -79,24 +79,24 @@
 
 <h1 id="what-is-an-account">What is an account?</h1>
 
-<p>In Ethereum, an <em>account</em> is an object which holds ether and possibly other metadata. It is slightly more general than the traditional concept of a financial “account” (i.e. an account on a bank or payment service). At a basic level, an account contains:</p>
+<p>In Ethereum, an <em>account</em> is a construct which holds ether and possibly other metadata. At a basic level, an account is made of:</p>
 
 <ul>
 <li>An <strong>address</strong>: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier.</li>
-<li>A <strong>balance</strong>: the amount of ether “owned” by this account.</li>
-<li><strong>Metadata</strong>: the number of transactions this account has participated in, and other associated data or code.</li>
+<li>A <strong>balance</strong>: the amount of <em>ether</em> owned by this account. Ether is the cryptocurrency of the Ethereum network.</li>
+<li>Metadata: the number of transactions this account has participated in, and other associated data or code.</li>
 </ul>
 
-<p>Ethereum supports two different types of accounts: user-owned accounts (accounts managed by users), and smart contract accounts (accounts with programmed-in behavior).</p>
+<p>Earlier we mentioned that Ethereum is a computer (the EVM), and that the Ethereum computer’s storage contains a record of all transactions/code that the computer has executed as well as the current state of the computer. The state of the computer at any time includes the data of every account that exists on the Ethereum network at that time, indexed by their addresses: essentially, a big table of all accounts and associated data lives in EVM storage. Therefore, anyone who stores the state of the EVM locally can look up the data (such as the balance) associated with any account address.</p>
+
+<p>Ethereum actually supports two different types of accounts: user-owned accounts (accounts managed by users), and smart contract accounts (accounts with programmed behavior).</p>
 
 <ul>
 <li>User-owned accounts (or “externally-owned accounts”) are exactly what they sound like, and map closely to the traditional notion of a payment system account. A human or human entity owns the account and uses it to hold ether and initiate transactions. Note that one person can distribute their funds over multiple user-owned accounts (this is in fact good practice if you own a lot of ether). The keys required to access a user-owned account are stored in a <em>wallet</em>, which will be discussed later.</li>
 <li>“Contract accounts” are assigned by the Ethereum network to any smart contract deployed to the network. These accounts wrap the smart contract code, and hold any persistent data associated with the smart contract program. At a high level, execution of this code can be automatically triggered by any user by sending ether and input data from their user-owned accounts to the contract account.</li>
 </ul>
 
-<p>Earlier we mentioned that Ethereum is a computer (the EVM), and that the Ethereum computer’s storage contains a record of all transactions/code that the computer has executed as well as the current state of the computer. The state of the computer at any time includes the data of every account that exists on the Ethereum network at that time, indexed by their addresses. Therefore, anyone who stores the state of the EVM locally can look up the data (such as the balance) associated with any account address.</p>
-
-<p>An account is <em>not</em> a wallet. A wallet is the keypair associated with a user-owned account, which allow a user to make transactions from or manage the account. Wallets will be discussed shortly.</p>
+<p>Note that an account is <em>not</em> a wallet. A wallet is the keypair associated with a user-owned account, which allow a user to make transactions from or manage the account. Wallets will be discussed shortly.</p>
 </section>
     <footer>
       <hr>

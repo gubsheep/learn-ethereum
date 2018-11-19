@@ -7,13 +7,14 @@ weight: 2
 ---
 
 # What is a wallet?
-## Public-Key Crypto (skip if you’re already familiar)
+
+# Public-Key Cryptography: A Review
 
 If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.  
 
 In public-key cryptography, every actor has a public and private key pair. The private key is known only by the corresponding actor, while everyone’s public keys can be seen by everyone. In this system, Alice can broadcast a message publicly and *sign* this message with an unforgeable signature that is generated from her private key and the message. Any other actor can *verify* the (message, signature) combination, given only knowledge of Alice’s public key. This enables Alice to sign her transaction request, and for anyone who sees this request to know that it could only have come from Alice.
 
-## Wallet Definition
+# Wallet Definition
 
 Ethereum uses public-key cryptography by associating every account with a public/private-key pair. For our purposes, we can basically think of the account address as the public key*. 
 
@@ -33,7 +34,7 @@ The following are NOT examples of wallets:
 
 *there’s actually a little more nuance, but the public key and address can “basically” be derived from each other without too much difficulty. 
 
-## What happens if someone else has my private key?
+# What happens if someone else has my private key?
 
 From the specification of public-key crypto, the “owner” of an account is the entity or entities who know the private key. So if someone else knows the private key to your account, they can:
 
@@ -44,6 +45,6 @@ Common ways that people lose control of their accounts include:
 
 - Getting tricked into entering their private key where a malicious adversary has access to; i.e. getting phished. 
 - Not actually having control of the account to begin with, i.e. using some third party service to manage your keys and transactions (such as an exchange), whose operators get hacked or whose operators simply shut down the service one day to run away with the money. 
-## What if I lose my private key?
+# What if I lose my private key?
 
 If you lose your private key you can’t sign any messages, and therefore you can’t prove to anyone on the network that you own the account. Again, from the specification, the “owner” of an account is the entity who knows the private key; if you don’t know the private key, by definition you don’t own the account. So **don’t lose your private key**, and **don’t tell anyone your private key**. 

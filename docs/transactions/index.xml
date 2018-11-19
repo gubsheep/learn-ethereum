@@ -16,7 +16,7 @@
         <link>http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/</guid>
-        <description>What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, most transactions look like the trivial financial transaction of transferring ether:
+        <description>What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, the simplest transactions look like the trivial financial transaction of transferring ether:
  Look up the accounts with addresses A and B in EVM storage. Decrease the account balance of A by x ETH. Increase the account balance of B by x ETH.  However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction.</description>
       </item>
     
@@ -25,8 +25,18 @@
         <link>http://briangu33.github.io/learn-ethereum/transactions/gas/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/transactions/gas/</guid>
-        <description>Transaction Fees and Gas As stated, the model we have described presents several problems:
+        <description>Transaction fees and gas As stated, the model we just described presents several problems:
  Suppose I want to induce some state change in the EVM by sending out some transaction request to the network. What incentivizes other participants to execute my transaction request and then propagate the state changes to the network, given that these actions take resources? Since transactions must be executed synchronously/in some sequence that everyone agrees on, execution of one transaction blocks execution of other transactions in the queue.</description>
+      </item>
+    
+      <item>
+        <title>Sender, Recipient, and Value</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/fields/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/fields/</guid>
+        <description>Sender, Recipient, and Value Every transaction request has three required fields: “to,” “from,” and “value” fields. In this section, we explain why each of these fields are necessarily in all transactions, even transactions which represent smart contract code execution on the EVM (rather than simple ether transfer).
+Sender This is the account that:
+ Pays the transaction fee for the transaction. Note that since every transaction requires a transaction fee to be paid to a miner, every transaction needs a sender.</description>
       </item>
     
       <item>
@@ -34,7 +44,25 @@
         <link>http://briangu33.github.io/learn-ethereum/transactions/blocks/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/transactions/blocks/</guid>
-        <description>Transactions are committed to the network in batches, or “blocks” Dozens of transaction requests are propagated around the Ethereum network per second. Simultaneously, miners verify, execute, and propagate state change associated with dozens of transactions per second. Because of latency and the nature of the network, it may be the case that two miners hear about, execute, and start propagating the result of two different local transactions before they hear about each others’.</description>
+        <description>Transactions are committed to the network in batches, or “blocks” Dozens of transaction requests are propagated around the Ethereum network per second. Simultaneously, miners verify, execute, and propagate state change associated with dozens of transactions per second. Because of latency and the nature of the network, it may be the case that two miners hear about, execute, and start propagating the result of two different transactions requests before they hear about each others’.</description>
+      </item>
+    
+      <item>
+        <title>Transactions are mined once, but executed by everyone</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/who-executes/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/who-executes/</guid>
+        <description>Transactions are mined once, but executed by everyone Now we can walk through the full life cycle of a transaction.
+ A user writes and signs a transaction request with the private key of some account. The user broadcasts the transaction request to the entire Ethereum network from some node. Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block.</description>
+      </item>
+    
+      <item>
+        <title>Walking Through a Real Transaction</title>
+        <link>http://briangu33.github.io/learn-ethereum/transactions/walkthrough/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/transactions/walkthrough/</guid>
+        <description>Walking Through a Real Transaction The easiest way to understand how transaction work is to walk through an example transaction. In this section, we’ll walk through a transaction made with MetaMask.
+First, I open MetaMask and click “send.” This takes me to a panel that allows me to specify a recipient address, the amount of ether to send, and the gas price/gas limit (click the blue button by the gas fee field).</description>
       </item>
     
   </channel>

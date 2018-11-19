@@ -16,8 +16,8 @@
         <link>http://briangu33.github.io/learn-ethereum/accounts/what-is-account/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/accounts/what-is-account/</guid>
-        <description>What is an account? In Ethereum, an account is an object which holds ether and possibly other metadata. It is slightly more general than the traditional concept of a financial “account” (i.e. an account on a bank or payment service). At a basic level, an account contains:
- An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier.</description>
+        <description>What is an account? In Ethereum, an account is a construct which holds ether and possibly other metadata. At a basic level, an account is made of:
+ An address: a 20-byte unique identifier. Anyone on the network can look up an account and its associated balance/metadata using this identifier. A balance: the amount of ether owned by this account. Ether is the cryptocurrency of the Ethereum network. Metadata: the number of transactions this account has participated in, and other associated data or code.</description>
       </item>
     
       <item>
@@ -25,7 +25,7 @@
         <link>http://briangu33.github.io/learn-ethereum/accounts/what-is-wallet/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/accounts/what-is-wallet/</guid>
-        <description>What is a wallet? Public-Key Crypto (skip if you’re already familiar) If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.</description>
+        <description>What is a wallet? Public-Key Cryptography: A Review If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.</description>
       </item>
     
       <item>
@@ -34,8 +34,9 @@
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/accounts/setting-up-wallet/</guid>
         <description>Setting up your first wallet I’ve found working with MetaMask to be a user-friendly and secure way to manage my Ethereum accounts.
-Install MetaMask Go to the Chrome Web Store and install the MetaMask extension.
-From time to time there are other extensions named “MetaMask” that are branded similarly, which are likely to be phishing scams. You’re fine if you install the MetaMask extension that clearly has the appropriate number of downloads and ratings.</description>
+Requirements  Google Chrome You do NOT need to connect a bank account, exchange account, or anything else to set up a wallet.
+Install MetaMask  Go to the Chrome Web Store and install the MetaMask extension.
+From time to time there are other extensions named “MetaMask” that are branded similarly, which may or may not be phishing scams.</description>
       </item>
     
       <item>
@@ -45,6 +46,15 @@ From time to time there are other extensions named “MetaMask” that are brand
         <guid>http://briangu33.github.io/learn-ethereum/accounts/browse-etherscan/</guid>
         <description>Browse Account Data with Etherscan Etherscan is a helpful web application that allows you to view information about the blockchain in a human-readable way.
 The entire history of all transactions, blocks, accounts, code, and other metadata collectively make up the “blockchain,” which is stored on every single Ethereum node. Etherscan.io runs a few nodes of their own, and thus has a copy of the entire blockchain on its machines. Etherscan then surfaces all of this data in a webapp.</description>
+      </item>
+    
+      <item>
+        <title>Getting some ether</title>
+        <link>http://briangu33.github.io/learn-ethereum/accounts/get-ether/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/accounts/get-ether/</guid>
+        <description>Getting some ether Users interact with the Ethereum blockchain by making transactions, which we’ll discuss in more detail later. All transactions (operations like sending cryptocurrency, requesting code execution on the EVM, or interacting with a DApp) require paying some amount of ether to the network in transaction fees. So in order to do anything at all with the Ethereum network, we need ether in our wallet.
+There are multiple ways to obtain ether for the wallet you just set up with MetaMask.</description>
       </item>
     
   </channel>

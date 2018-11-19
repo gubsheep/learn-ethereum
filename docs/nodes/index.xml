@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodes on Simplicity - Hugo theme</title>
+    <link>http://briangu33.github.io/learn-ethereum/nodes/</link>
+    <description>Recent content in Nodes on Simplicity - Hugo theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Oct 2018 10:15:01 +0200</lastBuildDate>
+    
+      <atom:link href="http://briangu33.github.io/learn-ethereum/nodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Pigeon Internet</title>
+        <link>http://briangu33.github.io/learn-ethereum/nodes/pigeon-internet/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/nodes/pigeon-internet/</guid>
+        <description>Pigeon Internet When I was a kid, my model of the Internet was something like “a bunch of machines in a big room shouting information at each other super fast.” This made it very hard to understand why designing a robust consensus protocol for a digital cash system is hard: if all of the participants can be forced to act according to pre-programmed behavior and in accordance with a clearly-specified protocol, and if all communication is happening pretty much instantaneously, why can’t every node on a digital cash system just instantaneously synchronize on every transaction or state change?</description>
+      </item>
+    
+      <item>
+        <title>Peer-to-peer systems</title>
+        <link>http://briangu33.github.io/learn-ethereum/nodes/p2p-systems/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/nodes/p2p-systems/</guid>
+        <description>Peer-to-peer systems Ethereum, Bitcoin, and other cryptocurrencies are based on peer-to-peer networks (P2P).
+The proposed applications of Pigeon Internet described in the previous section all involve a trusted central authority, who manages and stores data and responds to all requests. This design pattern is often referred to as the client-server model, or the hub-and-spoke model.
+In the client-server model, most participants on the network (clients) only communicate with centralized service providers (servers)&amp;ndash;for example, in the content distribution case, everyone interested in sending or receiving news communicates only with the news operator.</description>
+      </item>
+    
+      <item>
+        <title>What is an Ethereum node?</title>
+        <link>http://briangu33.github.io/learn-ethereum/nodes/what-is-node/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/nodes/what-is-node/</guid>
+        <description>What is an Ethereum Node? Ethereum nodes are computer programs that communicate with each other in accordance with the Ethereum protocol. In this section, we’ll explain what an Ethereum node is, as well the different types of nodes.
+There are several different types of nodes. The most important is the full node. This is usually what people refer to when they talk about “running an Ethereum node.”
+Types of Nodes Full Node A client which runs a full node:</description>
+      </item>
+    
+      <item>
+        <title>Mainnet and Testnets</title>
+        <link>http://briangu33.github.io/learn-ethereum/nodes/mainnet-testnet/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/nodes/mainnet-testnet/</guid>
+        <description>Mainnet and Testnets Ethereum is a protocol; there can be multiple independent networks conforming to this protocol that do not interact with each other.
+The main Ethereum network (mainnet) is one such network. However, other important networks exist besides the mainnet. Most of these are testnets, which are networks used by protocol developers or smart contract developers to test both protocol upgrades as well as potential smart contracts in a production-like environment before deployment to mainnet.</description>
+      </item>
+    
+      <item>
+        <title>Running a Node with Geth</title>
+        <link>http://briangu33.github.io/learn-ethereum/nodes/run-a-node/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/nodes/run-a-node/</guid>
+        <description>Running a Node with Geth You may be interested in running an Ethereum node. One of the easiest ways to do so is by downloading, installing, and running Geth. With Geth, we can have a light node up and running in minutes.
+First, you’ll want to install Geth.
+Once you’ve installed Geth, running an Ethereum full node is as simple as typing
+$ geth  into the command line (without the dollar sign).</description>
+      </item>
+    
+  </channel>
+</rss>

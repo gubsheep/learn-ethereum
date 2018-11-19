@@ -25,8 +25,17 @@ Here is my thesis: the signal-to-noise ratio of a simple Google search for any g
         <link>http://briangu33.github.io/learn-ethereum/intro/eth-101/</link>
         <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
         <guid>http://briangu33.github.io/learn-ethereum/intro/eth-101/</guid>
-        <description>Ethereum 101 This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!
-What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.</description>
+        <description>Ethereum 101 What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.”
+It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: Ethereum is a computer.</description>
+      </item>
+    
+      <item>
+        <title>The Current State of Ethereum</title>
+        <link>http://briangu33.github.io/learn-ethereum/intro/current-state/</link>
+        <pubDate>Mon, 29 Oct 2018 10:15:01 +0200</pubDate>
+        <guid>http://briangu33.github.io/learn-ethereum/intro/current-state/</guid>
+        <description>The current state of Ethereum As of late November 2018, Ethereum is largely still in a proof-of-concept state.
+Are there apps built to run on Ethereum that are presently providing significant value to end users? The short answer is no. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps here. CryptoKitties and Augur are examples of DApps.</description>
       </item>
     
   </channel>

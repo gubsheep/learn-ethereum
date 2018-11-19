@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Current State of Ethereum - Simplicity - Hugo theme</title>
+<meta name="author" content="Przemysław `eshlox` Kołodziejczyk">
+<meta name="description" content="A blog about everything.">
+
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+<link rel="stylesheet" href='/learn-ethereum/assets/css/main.39ec5efb65b7.css'>
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/learn-ethereum/assets/img/apple-touch-icon.png">
+<link rel="shortcut icon" href="/learn-ethereum/assets/img/favicon.ico">
+
+
+<link href="/learn-ethereum/posts/index.xml" rel="alternate" type="application/rss+xml" title="Simplicity - Hugo theme" />
+<link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
+
+<meta property="og:title" content="The Current State of Ethereum" />
+<meta property="og:description" content="The current state of Ethereum As of late November 2018, Ethereum is largely still in a proof-of-concept state.
+Are there apps built to run on Ethereum that are presently providing significant value to end users? The short answer is no. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps here. CryptoKitties and Augur are examples of DApps." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://briangu33.github.io/learn-ethereum/intro/current-state/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
+
+
+
+<meta itemprop="name" content="The Current State of Ethereum">
+<meta itemprop="description" content="The current state of Ethereum As of late November 2018, Ethereum is largely still in a proof-of-concept state.
+Are there apps built to run on Ethereum that are presently providing significant value to end users? The short answer is no. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps here. CryptoKitties and Augur are examples of DApps.">
+
+
+<meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="wordCount" content="396">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Current State of Ethereum"/>
+<meta name="twitter:description" content="The current state of Ethereum As of late November 2018, Ethereum is largely still in a proof-of-concept state.
+Are there apps built to run on Ethereum that are presently providing significant value to end users? The short answer is no. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps here. CryptoKitties and Augur are examples of DApps."/>
+
+
+  </head>
+  <body>
+    <nav>
+  <a href="/learn-ethereum/" title="Homepage">
+    Simplicity
+  </a>
+  
+    <a class="homePageIcon" href="/learn-ethereum/" title="Homepage">
+      <svg fill="#000000" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+  
+</nav>
+
+    <main>
+      
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <article>
+    <header>
+      <time datetime="2018-10-29 10:15">2018-10-29</time>
+      <h1>The Current State of Ethereum</h1>
+    </header>
+    <section>
+
+<h1 id="the-current-state-of-ethereum">The current state of Ethereum</h1>
+
+<p>As of late November 2018, Ethereum is largely still in a proof-of-concept state.</p>
+
+<h2 id="are-there-apps-built-to-run-on-ethereum-that-are-presently-providing-significant-value-to-end-users">Are there apps built to run on Ethereum that are presently providing significant value to end users?</h2>
+
+<p>The short answer is no. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps <a href="https://www.stateofthedapps.com/">here</a>. <a href="https://www.cryptokitties.co/">CryptoKitties</a> and <a href="https://www.augur.net/">Augur</a> are examples of DApps.</p>
+
+<p>Ethereum development is in the very, <em>very</em> early stages. This contrasts with Bitcoin, which is already providing a lot of its intended value-add to the world and whose base level protocol has (some claim) more-or-less matured. The intended value-add of Ethereum to the world is still very far off. My personal prediction is that the first “real” DApps are at least 2 years off.</p>
+
+<h2 id="who-actually-executes-the-code-of-a-dapp">Who actually executes the code of a DApp?</h2>
+
+<p>Every node on the network executes all the backend code of every DApp. So, if your machine is running a full node, it’s running the backend of 1,500+ DApps simultaneously. 30,000+ other full nodes are also running the exact same 1,500+ DApp backends.</p>
+
+<h2 id="what-is-the-current-performance-of-the-evm">What is the current performance of the EVM?</h2>
+
+<p>At present, the Ethereum network (and by extension, the EVM) can’t execute more than about 10 transactions per second. Concretely, a “transaction” is a write to permanent storage on the blockchain; for example, any transfer of Ether or other tokens between accounts is a transaction. The execution speed of the EVM is firstly upper-bounded by the speed of the miners/full nodes; in practice it is in fact much much lower, because of the proof-of-work required. This makes Ethereum in present form unusable for most large-scale applications.</p>
+
+<h2 id="how-does-ethereum-plan-to-handle-larger-scale-services">How does Ethereum plan to handle larger-scale services?</h2>
+
+<p>The Ethereum core researchers/developers are working on performance solutions including Plasma, Sharding, and Proof-of-Stake consensus protocols which may (potentially) improve performance by 4 or more orders of magnitude.</p>
+
+<h2 id="what-is-ethereum-s-relationship-with-ico-s-and-altcoin-s">What is Ethereum’s relationship with “ICO”s and “altcoin”s?</h2>
+
+<p>Many altcoins and most ICOs are actually built on the Ethereum network. Because Ethereum allows for the creation and execution of arbitrary programs, creating a token for an ICO is as simple as deploying a program to the Ethereum network that keeps track of who owns how much of the token in persistent EVM storage. Notably, this is much easier to do on top of Ethereum than on top of Bitcoin.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="categories"></p>
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    <script src="/learn-ethereum/assets/js/main.82829af440c4.js"></script>
+    
+  </body>
+</html>

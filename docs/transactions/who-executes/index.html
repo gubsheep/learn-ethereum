@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transactions are mined once, but executed by everyone - Simplicity - Hugo theme</title>
+<meta name="author" content="Przemysław `eshlox` Kołodziejczyk">
+<meta name="description" content="A blog about everything.">
+
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+<link rel="stylesheet" href='/learn-ethereum/assets/css/main.39ec5efb65b7.css'>
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/learn-ethereum/assets/img/apple-touch-icon.png">
+<link rel="shortcut icon" href="/learn-ethereum/assets/img/favicon.ico">
+
+
+<link href="/learn-ethereum/posts/index.xml" rel="alternate" type="application/rss+xml" title="Simplicity - Hugo theme" />
+<link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
+
+<meta property="og:title" content="Transactions are mined once, but executed by everyone" />
+<meta property="og:description" content="Transactions are mined once, but executed by everyone Now we can walk through the full life cycle of a transaction.
+ A user writes and signs a transaction request with the private key of some account. The user broadcasts the transaction request to the entire Ethereum network from some node. Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://briangu33.github.io/learn-ethereum/transactions/who-executes/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
+
+
+
+<meta itemprop="name" content="Transactions are mined once, but executed by everyone">
+<meta itemprop="description" content="Transactions are mined once, but executed by everyone Now we can walk through the full life cycle of a transaction.
+ A user writes and signs a transaction request with the private key of some account. The user broadcasts the transaction request to the entire Ethereum network from some node. Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block.">
+
+
+<meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="wordCount" content="472">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Transactions are mined once, but executed by everyone"/>
+<meta name="twitter:description" content="Transactions are mined once, but executed by everyone Now we can walk through the full life cycle of a transaction.
+ A user writes and signs a transaction request with the private key of some account. The user broadcasts the transaction request to the entire Ethereum network from some node. Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block."/>
+
+
+  </head>
+  <body>
+    <nav>
+  <a href="/learn-ethereum/" title="Homepage">
+    Simplicity
+  </a>
+  
+    <a class="homePageIcon" href="/learn-ethereum/" title="Homepage">
+      <svg fill="#000000" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+  
+</nav>
+
+    <main>
+      
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <article>
+    <header>
+      <time datetime="2018-10-29 10:15">2018-10-29</time>
+      <h1>Transactions are mined once, but executed by everyone</h1>
+    </header>
+    <section>
+
+<h1 id="transactions-are-mined-once-but-executed-by-everyone">Transactions are mined once, but executed by everyone</h1>
+
+<p>Now we can walk through the full life cycle of a transaction.</p>
+
+<ol>
+<li>A user writes and signs a transaction request with the private key of some account.</li>
+<li>The user broadcasts the transaction request to the entire Ethereum network from some node.</li>
+<li>Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local <em>mempool</em>, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block.</li>
+<li>At some point, a mining node aggregates several dozen or hundred transaction requests into a potential block, in a way that maximizes the transaction fees they earn while still staying under the block gas limit. The mining node then:
+
+<ol>
+<li>Verifies the validity of each transaction request (i.e. no one is trying to transfer ether out of an account they haven’t produced a signature for, the request is not malformed, etc.), and then executes the code of the request, altering the state of their local copy of the EVM. The miner awards the transaction fee for each such transaction request to their own account.</li>
+<li>Begins the process of producing the Proof-of-Work “certificate of legitimacy” for the potential block, once all transaction requests in the block have been verified and executed on the local EVM copy.</li>
+</ol></li>
+<li>Eventually, a miner will finish producing a certificate for a block which includes our specific transaction request. The minder then broadcasts the completed block, which includes the certificate and a checksum of the claimed new EVM state.</li>
+<li>Other nodes hear about the new block. They verify the certificate, <em>execute all transactions on the block themselves</em> (including the transaction originally broadcasted by our user), and verify that the checksum of their new EVM state after the execution of all transactions matches the checksum of the state claimed by the miner’s block. Only then do these nodes append this block to the tail of their blockchain, and accept the new EVM state as the canonical state.</li>
+<li>Each node removes all transactions in the new block from their local mempool of unfulfilled transaction requests.</li>
+<li>New nodes joining the network download all blocks in sequence, including the block containing our transaction of interest. They initialize a local EVM copy (which starts as a blank-state EVM), and then go through the process of executing every transaction in every block on top of their local EVM copy, verifying state checksums at each block along the way.</li>
+</ol>
+
+<p>Every transaction is mined (included in a new block and propagated for the first time) once, but executed and verified by every participant in the process of advancing the canonical EVM state. This highlights one of the central mantras of blockchain: <em>Don’t trust, verify</em>.</p>
+
+<p>In the next section, we’ll walk through the above steps with an actual transaction.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="categories"></p>
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    <script src="/learn-ethereum/assets/js/main.82829af440c4.js"></script>
+    
+  </body>
+</html>

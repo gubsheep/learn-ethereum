@@ -22,7 +22,7 @@
 <link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
 
 <meta property="og:title" content="What is a transaction?" />
-<meta property="og:description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, most transactions look like the trivial financial transaction of transferring ether:
+<meta property="og:description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, the simplest transactions look like the trivial financial transaction of transferring ether:
  Look up the accounts with addresses A and B in EVM storage. Decrease the account balance of A by x ETH. Increase the account balance of B by x ETH.  However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
@@ -31,13 +31,13 @@
 
 
 <meta itemprop="name" content="What is a transaction?">
-<meta itemprop="description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, most transactions look like the trivial financial transaction of transferring ether:
+<meta itemprop="description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, the simplest transactions look like the trivial financial transaction of transferring ether:
  Look up the accounts with addresses A and B in EVM storage. Decrease the account balance of A by x ETH. Increase the account balance of B by x ETH.  However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction.">
 
 
 <meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="224">
 
 
 
@@ -45,7 +45,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What is a transaction?"/>
-<meta name="twitter:description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, most transactions look like the trivial financial transaction of transferring ether:
+<meta name="twitter:description" content="What is a transaction? An Ethereum transaction is any code execution that changes state of the EVM. Currently, the simplest transactions look like the trivial financial transaction of transferring ether:
  Look up the accounts with addresses A and B in EVM storage. Decrease the account balance of A by x ETH. Increase the account balance of B by x ETH.  However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction."/>
 
 
@@ -79,7 +79,7 @@
 
 <h1 id="what-is-a-transaction">What is a transaction?</h1>
 
-<p>An Ethereum transaction is any <em>code execution that changes state of the EVM</em>. Currently, most transactions look like the trivial financial transaction of transferring ether:</p>
+<p>An Ethereum transaction is any <em>code execution that changes state of the EVM</em>. Currently, the simplest transactions look like the trivial financial transaction of transferring ether:</p>
 
 <ol>
 <li>Look up the accounts with addresses A and B in EVM storage.</li>
@@ -89,7 +89,7 @@
 
 <p>However, in theory transactions can be arbitrarily complicated operations—the word “transaction” in the context of Ethereum refers more to the concept of an atomic “database transaction.” For example, previously we mentioned that execution of any smart contract code can be triggered by sending ether and some input data to the corresponding contract account. Such an operation is the generalized version of a “transaction.”</p>
 
-<p>Transactions are the mechanism by which accounts (both user-owned and contract) interact with each other and the EVM as a whole. Any participant on the network (any <em>node</em>) can broadcast a request for a transaction to be executed on the EVM; after this happens, a miner will execute the transaction and propagate the resulting state change to the rest of the network. A <em>miner</em> is a node which executes transactions on the EVM and propagates the associated state changes&ndash;we&rsquo;ll talk more about nodes and miners in a later section.</p>
+<p>Transactions are the mechanism by which accounts (both user-owned and contract accounts) interact with each other and with the EVM as a whole. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a miner will execute the transaction and propagate the resulting state change to the rest of the network. We’ll break all of these components and processes down in the next few sections. For simplicity’s sake, we’ll mostly discuss transactions which act as transfers of ether; we’ll talk more about more complex transactions involving smart contracts in the smart contracts section.</p>
 </section>
     <footer>
       <hr>

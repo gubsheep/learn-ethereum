@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is an Ethereum node? - Simplicity - Hugo theme</title>
+<meta name="author" content="Przemysław `eshlox` Kołodziejczyk">
+<meta name="description" content="A blog about everything.">
+
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+<link rel="stylesheet" href='/learn-ethereum/assets/css/main.39ec5efb65b7.css'>
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/learn-ethereum/assets/img/apple-touch-icon.png">
+<link rel="shortcut icon" href="/learn-ethereum/assets/img/favicon.ico">
+
+
+<link href="/learn-ethereum/posts/index.xml" rel="alternate" type="application/rss+xml" title="Simplicity - Hugo theme" />
+<link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
+
+<meta property="og:title" content="What is an Ethereum node?" />
+<meta property="og:description" content="What is an Ethereum Node? Ethereum nodes are computer programs that communicate with each other in accordance with the Ethereum protocol. In this section, we’ll explain what an Ethereum node is, as well the different types of nodes.
+There are several different types of nodes. The most important is the full node. This is usually what people refer to when they talk about “running an Ethereum node.”
+Types of Nodes Full Node A client which runs a full node:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://briangu33.github.io/learn-ethereum/nodes/what-is-node/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
+
+
+
+<meta itemprop="name" content="What is an Ethereum node?">
+<meta itemprop="description" content="What is an Ethereum Node? Ethereum nodes are computer programs that communicate with each other in accordance with the Ethereum protocol. In this section, we’ll explain what an Ethereum node is, as well the different types of nodes.
+There are several different types of nodes. The most important is the full node. This is usually what people refer to when they talk about “running an Ethereum node.”
+Types of Nodes Full Node A client which runs a full node:">
+
+
+<meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
+<meta itemprop="wordCount" content="1398">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What is an Ethereum node?"/>
+<meta name="twitter:description" content="What is an Ethereum Node? Ethereum nodes are computer programs that communicate with each other in accordance with the Ethereum protocol. In this section, we’ll explain what an Ethereum node is, as well the different types of nodes.
+There are several different types of nodes. The most important is the full node. This is usually what people refer to when they talk about “running an Ethereum node.”
+Types of Nodes Full Node A client which runs a full node:"/>
+
+
+  </head>
+  <body>
+    <nav>
+  <a href="/learn-ethereum/" title="Homepage">
+    Simplicity
+  </a>
+  
+    <a class="homePageIcon" href="/learn-ethereum/" title="Homepage">
+      <svg fill="#000000" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+  
+</nav>
+
+    <main>
+      
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <article>
+    <header>
+      <time datetime="2018-10-29 10:15">2018-10-29</time>
+      <h1>What is an Ethereum node?</h1>
+    </header>
+    <section>
+
+<h1 id="what-is-an-ethereum-node">What is an Ethereum Node?</h1>
+
+<p>Ethereum nodes are computer programs that communicate with each other in accordance with the Ethereum protocol. In this section, we’ll explain what an Ethereum node is, as well the different types of nodes.</p>
+
+<p>There are several different types of nodes. The most important is the <em>full node</em>. This is usually what people refer to when they talk about “running an Ethereum node.”</p>
+
+<h1 id="types-of-nodes">Types of Nodes</h1>
+
+<h2 id="full-node">Full Node</h2>
+
+<p>A client which runs a full node:</p>
+
+<ul>
+<li>Stores the latest state of the EVM completely: this includes all of the user accounts and their balances, all of the smart contract accounts and their balances and code, all metadata about accounts and contracts, and all other persistent smart contract data.</li>
+<li>Receive, stores, and gossips new transaction requests: recall that transactions are any request for code execution that changes the state of the EVM. Before a transaction is executed and included in the blockchain, it must be requested by some participant, and the request must be made known throughout the network. The most common type of transaction request looks something like “Alice requests 10 ether be transferred from her account to Bob’s account.”</li>
+<li>Receives, stores, and gossips new blocks: blocks are batches of transactions that have been verified, executed, and “committed” by the network (again, more on this later). Upon hearing about a block, the full node verifies the validity of the block, alters the state of its local EVM copy by executing all of the transactions in the block, appends the block to its copy of the blockchain (the history of all blocks), and then sends the block data to its peers who have not yet heard about the block.</li>
+<li>Is capable of making transaction requests: each transaction request has to originate from some node. Any user interested in making a transaction request to the network must do so by sending their request out from a node.</li>
+</ul>
+
+<p>Note also that a node <strong>does not</strong> correspond to an account. Rather, nodes are vehicles which anyone can use to interact with the Ethereum universe; accounts are primitives which live inside the universe. For example, anyone with the private key to an account can write a transaction request to transfer ether out of the account, sign it with the private key, and then send the signed transaction request to the network by propagating it from <em>any node</em>.</p>
+
+<p>In general, if you have a good Internet connection, running a node is beneficial to the health of the Ethereum network and is broadly good for keeping the network decentralized. Firstly, a node with good connection improves the connectivity of the network, linking peers who might otherwise take longer to communicate. Secondly, if only a few operators ran nodes, the network would look much more centralized, and in this way would be much more vulnerable to either censorship or targeted attack.</p>
+
+<p>Running a full node takes 100-200GB+ of hard drive space. Because a full node needs to download the full history of the blockchain, updating and verifying the EVM state as it goes, the time between starting a full node client for the first time and catching up to the latest blocks can be hours to days.</p>
+
+<h2 id="full-archival-node">Full Archival Node</h2>
+
+<p>A full archival node is a full node that also stores a snapshot of what the complete EVM state was at <em>every</em> block in the history of Ethereum. If you were running a full archival node as of block 5,000,000, your computer was storing 5 million EVM state snapshots (one corresponding to the state as of each block).</p>
+
+<p>Running a full archival node takes 1TB+ of hard drive space.</p>
+
+<h2 id="mining-node">Mining Node</h2>
+
+<p>Earlier we mentioned that full nodes can receive, store, and gossip new blocks (batches of verified and executed transactions) to each other. Of course, new blocks have to be created by someone!</p>
+
+<p>All new blocks are constructed by and originate from some node in the network. Any full node can spend computational resources batching, executing, and “committing” unfulfilled transaction requests, in exchange for transaction fees and a network reward. These unfulfilled transaction requests are executed locally, aggregated into a block, and propagated to the rest of the network. This process of batching and committing transactions is called <em>mining</em>; nodes that mine are called <em>miners</em>.</p>
+
+<p>“Committing” transactions involves performing a lot of intensive computation, in a process called <em>Proof-of-Work</em>. Miners use specialized mining software such as <a href="https://github.com/ethereum-mining/ethminer">ethminer</a>, and often perform these computations on dedicated GPUs. We’ll talk in more detail about transactions, mining, blocks, and Proof of Work later.</p>
+
+<h2 id="light-node">Light Node</h2>
+
+<p>Not everyone has the ability to run an Ethereum node due to the space, networking, and computation requirements. This is a problem because a central tenet in the design of many decentralized systems is that the cost of participation must be low.</p>
+
+<p>Such users have two options:</p>
+
+<ul>
+<li>They can either connect to the Ethereum network by communicating with someone who <em>does</em> run a node, asking that node to send transaction requests and querying the node for relevant information about the blockchain (such as account balances). This is somewhat at odds with the philosophy of the Ethereum project and of decentralization projects broadly, as it encourages reliance on centralized service providers who have the resources to run nodes.</li>
+<li>They can run a <em>light node,</em> also known as a <em>light client</em>. Running allows you to participate directly in the Ethereum network (sending transaction requests, reading blockchain data) without having hundreds of GB of free space, albeit in a limited fashion.</li>
+</ul>
+
+<p>Light nodes are extremely important because they allow for more widespread participation in the Ethereum network. We outline the key functionality of a light node below:</p>
+
+<ul>
+<li><strong>A light node does not store the full state of the EVM</strong>. Rather, it stores a sort of “checksum” (basically a hash) of the EVM state, and requests data about the EVM state on-demand from full node peers, using the checksum to verify the validity of the data. For example, if I’m running a light node on my computer, my computer does not store the exact balance in Alice’s account; however, since my light node connects to a full node which does store this balance, I can request the balance data, and then check this with my checksum of the EVM state. The particular mechanism/data structure which allows me to verify validity quickly with only a checksum is outlined later, in the section on Merkle Trees.</li>
+<li><strong>A light node by default does not store all block data—only block headers</strong><strong><em>.</em></strong> When a new block is propagated to the network, light clients only receive the block header (which includes a block data checksum and other basic metadata) from full node peers. If a light node wants to know about a particular transaction in a block, it requests that particular transaction data from a full node peer, and then validates the data against the block checksum.</li>
+<li><strong>A light node can make transaction requests to the network</strong>. Any user can write (and sign) a transaction request and broadcast it to the network from the light node. The light node propagates the transaction request to its full node peers, which in turn propagate the request to the rest of the network.</li>
+<li><strong>Light nodes only connect to full nodes, and generally take up network resources rather than providing them</strong><strong><em>.</em></strong> **Light clients don’t store the full EVM state or full block data, so there is no reason for them to connect to each other. Since they are constantly requesting data and never passing on data, they are a drain on the bandwidth and network resources of full node peers. Running light nodes does not improve the health of the network.</li>
+
+<li><p><strong>Light clients can’t mine</strong>. You need to run a full node to mine.</p>
+
+<h1 id="ethereum-node-clients">Ethereum Node Clients</h1></li>
+</ul>
+
+<p>There are multiple Ethereum node clients. The most popular and well-maintained by far are Geth and Parity.</p>
+
+<p>You can find a list of most Ethereum node clients in the <a href="https://github.com/ethereum/wiki/wiki/Clients,-tools,-dapp-browsers,-wallets-and-other-projects#ethereum-clients">Ethereum Github project wiki</a>. The Ethereum Homestead Documentation has a good <a href="http://ethdocs.org/en/latest/ethereum-clients/choosing-a-client.html#why-are-there-multiple-ethereum-clients">summary</a> of why having multiple node clients is generally good for the ecosystem. Finally, <a href="https://www.sitepoint.com/an-introduction-to-geth-and-running-ethereum-nodes/">this article</a> has a great tutorial about how to set up and run Geth, as well as an explanation of the different kinds of clients (discussed above).</p>
+
+<p>We recommend using Geth if you are interested in running your own Ethereum node. We’ll walk through how to set up a Geth node in a later sections.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="categories"></p>
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    <script src="/learn-ethereum/assets/js/main.82829af440c4.js"></script>
+    
+  </body>
+</html>

@@ -22,7 +22,7 @@
 <link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
 
 <meta property="og:title" content="What is a wallet?" />
-<meta property="og:description" content="What is a wallet? Public-Key Crypto (skip if you’re already familiar) If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice." />
+<meta property="og:description" content="What is a wallet? Public-Key Cryptography: A Review If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://briangu33.github.io/learn-ethereum/accounts/what-is-wallet/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
 <meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
@@ -30,12 +30,12 @@
 
 
 <meta itemprop="name" content="What is a wallet?">
-<meta itemprop="description" content="What is a wallet? Public-Key Crypto (skip if you’re already familiar) If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.">
+<meta itemprop="description" content="What is a wallet? Public-Key Cryptography: A Review If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.">
 
 
 <meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="wordCount" content="756">
 
 
 
@@ -43,7 +43,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What is a wallet?"/>
-<meta name="twitter:description" content="What is a wallet? Public-Key Crypto (skip if you’re already familiar) If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice."/>
+<meta name="twitter:description" content="What is a wallet? Public-Key Cryptography: A Review If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice."/>
 
 
   </head>
@@ -76,13 +76,13 @@
 
 <h1 id="what-is-a-wallet">What is a wallet?</h1>
 
-<h2 id="public-key-crypto-skip-if-you-re-already-familiar">Public-Key Crypto (skip if you’re already familiar)</h2>
+<h1 id="public-key-cryptography-a-review">Public-Key Cryptography: A Review</h1>
 
 <p>If Alice wants to send ether from her own account to Bob’s account, Alice need to create a transaction request and send it out to the network for verification. Ethereum’s usage of public-key cryptography ensures that Alice can prove that she originally initiated the transaction request. Without cryptographic mechanisms, a malicious adversary Eve could simply publicly broadcast a request that looks something like “send 5 ETH from Alice’s account to Eve’s account,” and no one would be able to verify that it didn’t come from Alice.</p>
 
 <p>In public-key cryptography, every actor has a public and private key pair. The private key is known only by the corresponding actor, while everyone’s public keys can be seen by everyone. In this system, Alice can broadcast a message publicly and <em>sign</em> this message with an unforgeable signature that is generated from her private key and the message. Any other actor can <em>verify</em> the (message, signature) combination, given only knowledge of Alice’s public key. This enables Alice to sign her transaction request, and for anyone who sees this request to know that it could only have come from Alice.</p>
 
-<h2 id="wallet-definition">Wallet Definition</h2>
+<h1 id="wallet-definition">Wallet Definition</h1>
 
 <p>Ethereum uses public-key cryptography by associating every account with a public/private-key pair. For our purposes, we can basically think of the account address as the public key*.</p>
 
@@ -106,7 +106,7 @@
 
 <p>*there’s actually a little more nuance, but the public key and address can “basically” be derived from each other without too much difficulty.</p>
 
-<h2 id="what-happens-if-someone-else-has-my-private-key">What happens if someone else has my private key?</h2>
+<h1 id="what-happens-if-someone-else-has-my-private-key">What happens if someone else has my private key?</h1>
 
 <p>From the specification of public-key crypto, the “owner” of an account is the entity or entities who know the private key. So if someone else knows the private key to your account, they can:</p>
 
@@ -122,7 +122,7 @@
 
 <li><p>Not actually having control of the account to begin with, i.e. using some third party service to manage your keys and transactions (such as an exchange), whose operators get hacked or whose operators simply shut down the service one day to run away with the money.</p>
 
-<h2 id="what-if-i-lose-my-private-key">What if I lose my private key?</h2></li>
+<h1 id="what-if-i-lose-my-private-key">What if I lose my private key?</h1></li>
 </ul>
 
 <p>If you lose your private key you can’t sign any messages, and therefore you can’t prove to anyone on the network that you own the account. Again, from the specification, the “owner” of an account is the entity who knows the private key; if you don’t know the private key, by definition you don’t own the account. So <strong>don’t lose your private key</strong>, and <strong>don’t tell anyone your private key</strong>.</p>

@@ -22,8 +22,8 @@
 <link href="/learn-ethereum/posts/index.xml" rel="feed" type="application/rss+xml" title="Simplicity - Hugo theme" />
 
 <meta property="og:title" content="Ethereum 101" />
-<meta property="og:description" content="Ethereum 101 This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!
-What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means." />
+<meta property="og:description" content="Ethereum 101 What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.”
+It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: Ethereum is a computer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://briangu33.github.io/learn-ethereum/intro/eth-101/" /><meta property="article:published_time" content="2018-10-29T10:15:01&#43;02:00"/>
 <meta property="article:modified_time" content="2018-10-29T10:15:01&#43;02:00"/>
@@ -31,13 +31,13 @@ What is Ethereum? Before I started reading, my answer to this question would hav
 
 
 <meta itemprop="name" content="Ethereum 101">
-<meta itemprop="description" content="Ethereum 101 This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!
-What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.">
+<meta itemprop="description" content="Ethereum 101 What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.”
+It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: Ethereum is a computer.">
 
 
 <meta itemprop="datePublished" content="2018-10-29T10:15:01&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-29T10:15:01&#43;02:00" />
-<meta itemprop="wordCount" content="1555">
+<meta itemprop="wordCount" content="1640">
 
 
 
@@ -45,8 +45,8 @@ What is Ethereum? Before I started reading, my answer to this question would hav
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ethereum 101"/>
-<meta name="twitter:description" content="Ethereum 101 This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!
-What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means."/>
+<meta name="twitter:description" content="Ethereum 101 What is Ethereum? Before I started reading, my answer to this question would have been something like: “Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.”
+It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: Ethereum is a computer."/>
 
 
   </head>
@@ -79,76 +79,88 @@ What is Ethereum? Before I started reading, my answer to this question would hav
 
 <h1 id="ethereum-101">Ethereum 101</h1>
 
-<p>This is a WIP overview of Ethereum that assumes no prior exposure to blockchain or cryptocurrency. Please comment with any questions, confusions, or feedback!</p>
-
 <h1 id="what-is-ethereum">What is Ethereum?</h1>
 
 <p>Before I started reading, my answer to this question would have been something like:
 <em>“Ethereum is a cryptocurrency, kind of like Bitcoin. It’s the second largest cryptocurrency by market cap. Some people have built silly apps (like CryptoKitties) ‘on top of’ Ethereum, though I’m not really sure what that means.”</em></p>
 
-<p>It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: <strong>Ethereum is a computer</strong>. ****Here’s a three paragraph summary of what this means.</p>
+<p>It turns out that the currency isn’t the point at all. Erase everything you know and start from the following: <strong>Ethereum is a computer</strong>. ****Here’s a very high-level summary of what this means.</p>
 
-<p>In the Ethereum universe, there is a single, canonical computer (called the Ethereum Virtual Machine) whose state everyone on the Ethereum network agrees on*. Everyone who participates in the Ethereum network keeps either a full or partial copy of the state of this computer. Additionally, any participant can broadcast a request for this computer to perform arbitrary computation; when a computation is carried out by the network (more on what this means later), then the state of this global computer changes, and that change is broadcast to and verified by everyone on the network. These requests are called <em>transactions;</em> the record of all transactions as well as the EVM’s state is stored in the <em>blockchain</em>, which in turn is stored and agreed upon* by all nodes. Cryptographic mechanisms ensure that once transactions are verified as valid and added to the blockchain, they can’t be tampered with later; the same mechanisms also ensure that all transactions are signed and executed with appropriate “permissions” (i.e. no one should be able to send digital assets from Alice’s account, except for Alice herself).</p>
+<p>In the Ethereum universe, there is a single, canonical computer (called the Ethereum Virtual Machine, or EVM) whose state everyone on the Ethereum network agrees on. Everyone who participates in the Ethereum network (the Ethereum <em>nodes</em>) keeps either a full or partial copy of the state of this computer. Additionally, any participant can broadcast a request for this computer to perform arbitrary computation. Whenever such a request is broadcast, some participant on the network verifies, validates, and carries out the computation (“executing” the transaction request). This causes a state change in the EVM, which the participant then commits and propagates to the rest of the network. These requests are called <em>transactions;</em> the record of all transactions as well as the EVM’s state is stored in the <em>blockchain</em>, which in turn is stored and agreed upon by all nodes. Cryptographic mechanisms ensure that once transactions are verified as valid and added to the blockchain, they can’t be tampered with later; the same mechanisms also ensure that all transactions are signed and executed with appropriate “permissions” (i.e. no one should be able to send digital assets from Alice’s account, except for Alice herself).</p>
 
-<p>The purpose of Ether, the cryptocurrency, is to allow for the existence of a market for computation. Such a market provides an economic incentive for other participants to verify/execute transactions and to provide computational resources to the network. Any participant who adds a transaction to the transaction pool must also offer some amount of ether to the network, as a bounty to be awarded to whoever eventually does the work of verifying the transaction, executing it, adding it to the blockchain, and broadcasting it to the network. The amount of ether paid is a function of the complexity and length of the computation. This also prevents malicious participants from intentionally clogging the network with infinite loops or resource-intense scripts, as these actors will be continually charged.</p>
+<p>The purpose of Ether, the cryptocurrency, is to allow for the existence of a market for computation. Such a market provides an economic incentive for participants to verify/execute transaction requests and to provide computational resources to the network. Any participant who broadcasts a transaction request must also offer some amount of ether to the network, as a bounty to be awarded to whoever eventually does the work of verifying the transaction, executing it, committing it to the blockchain, and broadcasting it to the network. The amount of ether paid is a function of the complexity and length of the computation. This also prevents malicious participants from intentionally clogging the network by requesting execution of infinite loops or resource-intense scripts, as these actors will be continually charged.</p>
 
-<p>We call the programs sent to and executed by the network <em>smart contracts</em>. At a very basic level, you can think of a smart contract like a sort of vending machine: a script which, when called, performs some actions or computation if certain conditions are satisfied. For example, a simple vendor smart contract could transfer ownership of a digital asset if the caller sends Ether to a specific recipient. Any developer can create a smart contract and make it public to the network, using the blockchain as its data layer, for a fee paid to the network. Any user can then call the smart contract to execute its code, again for a fee paid to the network. Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services: marketplaces, financial instruments, games, etc. It is important to note that any smart contract deployed to the network is immutable once deployed, and has its source code made public.</p>
-
-<p>*agrees on, modulo the latest block(s). The consensus mechanism ensures that all machines are in agreement up until at most the few hundred most recent global transactions.</p>
+<p>In practice, participants don’t write new code every time they want to request a computation on the EVM. Rather, developers upload programs (reusable snippets of code) into EVM storage, and then users make requests for the execution of these code snippets with varying parameters. We call the programs uploaded to and executed by the network <em>smart contracts</em>. At a very basic level, you can think of a smart contract like a sort of vending machine: a script which, when called with certain parameters, performs some actions or computation if certain conditions are satisfied. For example, a simple vendor smart contract could create and assign ownership of a digital asset if the caller sends Ether to a specific recipient. Any developer can create a smart contract and make it public to the network, using the blockchain as its data layer, for a fee paid to the network. Any user can then call the smart contract to execute its code, again for a fee paid to the network. Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services: marketplaces, financial instruments, games, etc.</p>
 
 <h1 id="why-is-this-an-interesting-useful-model-of-computation">Why is this an interesting/useful model of computation?</h1>
 
-<p>This is an entirely different paradigm: computation based on community consensus, rather than based on centralized service providers. This comes with both costs and benefits.</p>
+<p>This is an novel paradigm: computation based on community consensus rather than centralized service providers. This comes with both costs and benefits.</p>
 
-<p>Any DApp (decentralized app) run on the Ethereum blockchain has the following inherent advantages over an equivalent app run with the client-server model:</p>
+<p>A DApp (decentralized app) run on the Ethereum blockchain has certain advantages over an equivalent app run with the client-server model:</p>
 
 <ul>
 <li><strong>Zero downtime</strong>: Once the smart contract at the core of an app is deployed and on the blockchain, the network as a whole will always be able to serve clients looking to interact with the contract. Malicious actors therefore cannot launch denial-of-service attacks targeted towards individual DApps.</li>
-<li><strong>Privacy:</strong> You don’t need to provide identity to deploy or interact with a DApp.</li>
+<li><strong>Privacy:</strong> You don’t need to provide real-world identity to deploy or interact with a DApp.</li>
 <li><strong>Resistance to censorship</strong>: No single entity on the network can block users from submitting transactions, deploying DApps, or reading data from the blockchain.</li>
 <li><strong>Complete data integrity</strong>: Data stored on the blockchain is immutable and indisputable, thanks to cryptographic primitives. Malicious actors cannot forge transactions or other data that has already been made public.</li>
-<li><strong>Transparent, audit-able, immutable code</strong>: The code of every app on the blockchain is public and immutable. This makes it so that participants can enjoy…</li>
+<li><strong>Transparent, audit-able, immutable code</strong>: The code of every app on the blockchain is generally immutable. This makes it so that participants can enjoy…</li>
 <li><strong>Trustless computation/verifiable behavior</strong>: Many services we use today require us to put some degree of trust in a central authority. For example, we trust that financial institutions will not misuse our financial data, tamper with records, or get hacked. This is something we take for granted in the US; in other countries, replacing bureaucracy with systems that have mathematically provable behavior could theoretically cut down on costs and corruption.</li>
 </ul>
 
-<p>Of course, there are tradeoffs:</p>
+<p>Of course, there are also many (often fatal) downsides:</p>
 
 <ul>
-<li><strong>DApps can’t be easily maintained</strong>: Because code published to the blockchain is immutable, developers can’t make any updates to their DApps once they are deployed. No developer can force users to adopt a more recent version of a DApp, even if bugs (or security risks!) are identified in an older version. It is not difficult to imagine a scenario where a malicious developer or hacker takes advantage of this.</li>
+<li><strong>DApps are very hard to maintain</strong>: Because code published to the blockchain is immutable, developers can’t make any updates to their DApps once they are deployed. No developer can force users to adopt a more recent version of a DApp, even if bugs (or security risks!) are identified in an older version. It is not difficult to imagine a scenario where a malicious developer or hacker takes advantage of this.</li>
 <li><strong>There is a huge performance overhead, and scaling is really, really hard</strong>: To achieve the level of security, integrity, transparency, and reliability that Ethereum aspires to, every node runs and stores every transaction. On top of this, proof-of-work takes time as well. A back-of-the-envelope calculation puts the overhead at something like 1,000,000x that of standard computation currently. Because of this…</li>
-<li><strong>Network congestion affects everyone</strong>: At least in the current model, if one app is using too many computational resources, the entire network gets backed up. Currently, the network is only able to add new transactions to the blockchain at something like 10 per second; if transactions are being sent in faster than this, the pool of unconfirmed transactions can quickly balloon.</li>
-<li><strong>It may be harder to engineer user-friendly experiences</strong>: The average end user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.
-
-<ul>
+<li><strong>Network congestion affects everyone</strong>: At least in the current model, if one DApp is using too many computational resources, the entire network gets backed up. Currently, the network is only able to process about 10 transactions per second; if transactions are being sent in faster than this, the pool of unconfirmed transactions can quickly balloon.</li>
+<li><strong>It may be harder to engineer user-friendly experiences</strong>: The average end user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.</li>
 <li>User-friendly and developer-friendly solutions built on top of the base layer of Ethereum might end up looking like centralized services anyways: for example, such services may store keys or other sensitive information server-side (Coinbase), serve a frontend using a centralized server, or run important business logic on a centralized server before writing to the blockchain. This eliminates many (if not all) of the advantages of blockchain over the traditional model.</li>
-</ul></li>
 </ul>
 
 <p>It remains to be seen whether or not these obstacles are insurmountable.</p>
 
-<h1 id="the-current-state-of-ethereum">The Current State of Ethereum</h1>
+<h1 id="terminology-and-summary">Terminology and Summary</h1>
 
-<h2 id="are-there-apps-built-to-run-on-ethereum-that-are-presently-providing-significant-value-to-end-users">Are there apps built to run on Ethereum that are presently providing significant value to end users?</h2>
+<p>We’ll dive into each of these topics in more depth in future sections. However, it is important to have a basic model for each of the components in Ethereum. This is a summary of information from the previous section, organized by key constructs.</p>
 
-<p>Not yet, as far as I can tell. Most DApps presently are prototypes or proofs-of-concept and aren’t yet competitive with their centralized counterparts. You can check out a curated list of DApps <a href="https://www.stateofthedapps.com/">here</a>. CryptoKitties is an example of a DApp.</p>
+<h2 id="evm">EVM</h2>
 
-<p>Ethereum development is in the very, <em>very</em> early stages. This contrasts with Bitcoin, which is already providing its intended value-add to the world and whose protocol has (some claim) more-or-less matured. The intended value-add of Ethereum to the world is still very far off. My prediction is that the first “real” DApps are at least 2 years off.</p>
+<p>The Ethereum Virtual Computer is the global virtual computer who’s state every participant on the Ethereum network agrees on. Any participant can request the execution of arbitrary code on the EVM; code execution changes the state of the EVM.</p>
 
-<h2 id="who-actually-executes-the-code-of-a-dapp">Who actually executes the code of a DApp?</h2>
+<h2 id="node">Node</h2>
 
-<p>Every node on the network executes all the backend code of every DApp. So, if your machine is running a full node, it’s running the backend of 1,500+ DApps simultaneously. 30,000+ other full nodes are also running the exact same 1,500+ DApp backends.</p>
+<p>The real-life machines which store the EVM state. Nodes communicate with each other to propagate information about the EVM state and new state changes. Any user can also request execution of code by broadcasting code execution request from a node. The Ethereum network itself is the aggregate of all Ethereum nodes and their communications.</p>
 
-<h2 id="what-is-the-current-performance-of-the-evm">What is the current performance of the EVM?</h2>
+<h2 id="ether">Ether</h2>
 
-<p>At present, the Ethereum network (and by extension, the EVM) can’t execute more than about 10 transactions per second. Concretely, a “transaction” is a write to permanent storage on the blockchain; for example, any transfer of Ether or other tokens between accounts is a transaction. The execution speed of the EVM is firstly upper-bounded by the speed of the miners/full nodes; in practice it is in fact much much lower, because of the proof-of-work required. This makes Ethereum in present form unusable for most large-scale applications.</p>
+<p>The native cryptocurrency of Ethereum. Users pay ether to other users to have their code execution requests fulfilled.</p>
 
-<h2 id="how-does-ethereum-plan-to-handle-larger-scale-services">How does Ethereum plan to handle larger-scale services?</h2>
+<h2 id="account">Account</h2>
 
-<p>The Ethereum core researchers/developers are working on performance solutions including Plasma, Sharding, and Proof-of-Stake consensus protocols which may (potentially) improve performance by 4 or more orders of magnitude.</p>
+<p>Where ether is stored. Users can initialize accounts, deposit ether into the accounts, and transfer ether from their accounts to other users. Accounts and account balances are stored in a big table in the EVM; they are a part of the overall EVM state.</p>
 
-<h2 id="what-is-ethereum-s-relationship-with-ico-s-and-altcoin-s">What is Ethereum’s relationship with “ICO”s and “altcoin”s?</h2>
+<h2 id="transaction">Transaction</h2>
 
-<p>Many altcoins and most ICOs are actually built on the Ethereum network. Because Ethereum allows for the creation and execution of arbitrary programs, creating a token for an ICO is as simple as deploying a program to the Ethereum network that keeps track of who owns how much of the token. Notably, this is much easier to do on top of Ethereum than on top of Bitcoin.</p>
+<p>A “transaction request” is the formal term for a request for code execution on the EVM, and a “transaction” is a fulfilled transaction request and the associated change in the EVM state. Any user can broadcast a transaction request to the network from a node. For the transaction request to actually affect the agreed-upon EVM state, it must be validated, executed, and “committed to the network” by some other node. Execution of any code causes a state change in the EVM; upon commitment, this state change is broadcast to all nodes in the network. The particular process of validation and commitment will be discussed in more depth later. Some examples of transactions:</p>
+
+<ul>
+<li>Send X ether from my account to Alice’s account.</li>
+<li>Publish some smart contract code into EVM memory.</li>
+
+<li><p>Execute the code of the smart contract at address X in the EVM, with parameters Y.</p>
+
+<h2 id="block">Block</h2></li>
+</ul>
+
+<p>The volume of transactions is very high, so they are “committed” in batches, or blocks. Blocks generally contain dozens to hundreds of transactions.</p>
+
+<h2 id="blockchain">Blockchain</h2>
+
+<p>The sequence of all blocks that have been committed to the Ethereum network in the history of the network. So named because each block contains a reference to the previous block, which helps us maintain an ordering over all blocks (and thus over the precise history).</p>
+
+<h2 id="smart-contract">Smart Contract</h2>
+
+<p>A reusable snippet of code (a program) which a developer publishes into EVM memory. Anyone can request that the smart contract code be executed by making a transaction request. Because developers can write arbitrary executable applications into the EVM (games, marketplaces, financial instruments, etc.) by publishing smart contracts, these are often also called DApps, or Decentralized Apps.</p>
 </section>
     <footer>
       <hr>

@@ -3,6 +3,13 @@
   
     
       <url>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/pigeon-internet/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
         <loc>http://briangu33.github.io/learn-ethereum/transactions/what-is-tx/</loc>
         <lastmod>2018-10-29T10:15:01+02:00</lastmod>
       </url>
@@ -38,6 +45,13 @@
   
     
       <url>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/p2p-systems/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
         <loc>http://briangu33.github.io/learn-ethereum/transactions/gas/</loc>
         <lastmod>2018-10-29T10:15:01+02:00</lastmod>
       </url>
@@ -52,14 +66,28 @@
   
     
       <url>
-        <loc>http://briangu33.github.io/learn-ethereum/transactions/</loc>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/</loc>
         <lastmod>2018-10-29T10:15:01+02:00</lastmod>
       </url>
     
   
     
       <url>
-        <loc>http://briangu33.github.io/learn-ethereum/transactions/blocks/</loc>
+        <loc>http://briangu33.github.io/learn-ethereum/transactions/fields/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/intro/current-state/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/what-is-node/</loc>
         <lastmod>2018-10-29T10:15:01+02:00</lastmod>
       </url>
     
@@ -73,7 +101,62 @@
   
     
       <url>
+        <loc>http://briangu33.github.io/learn-ethereum/transactions/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/mainnet-testnet/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/transactions/blocks/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
         <loc>http://briangu33.github.io/learn-ethereum/accounts/browse-etherscan/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/smart-contracts/</loc>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/accounts/get-ether/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/nodes/run-a-node/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/transactions/who-executes/</loc>
+        <lastmod>2018-10-29T10:15:01+02:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://briangu33.github.io/learn-ethereum/transactions/walkthrough/</loc>
         <lastmod>2018-10-29T10:15:01+02:00</lastmod>
       </url>
     
